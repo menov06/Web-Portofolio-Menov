@@ -1,0 +1,481 @@
+<!DOCTYPE html> <!-- deklarasi tipe file -->
+<html lang="id"> <!--bahasa indonesia -->
+<head> <!--utama atau awalannya atau aturannya-->
+  <meta charset="UTF-8" /> <!-- mengatur karakter u/ mendukung emoji dan simbol  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- menyesuaikan layar device -->
+  <title>Menov's Profile</title> <!-- judul dibrowser -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet"/> <!-- font -->
+  <style> /* bagian css(desain) */
+  :root { /* deklarasiin warna diawal biar bbisa dipakai berulang */
+    --hijau: #32645b;
+    --pink: #f7b7e6;
+    --biru: #9bb1dd;
+    --putih: #fefcfc;
+  }
+  * { /* reset bawaan browser */
+    margin: 0; /* jarak luar */
+    padding: 0; /* jarak dalam */
+    box-sizing: border-box; /* ukuran elemen jadi mudah diatur */
+  }
+  body { /* aturan buat semua halaman */
+    font-family: 'Lato', sans-serif;
+    color: var(--hijau);
+    background-color: var(--pink);
+    scroll-behavior: smooth; /* transisinya halus */
+  }
+
+
+/* NAVBAR */
+nav {
+  position: fixed; /*navbar stay diatas tidak bergerak*/
+  top: 0;
+  width: 100%;
+  background-color: var(--biru);
+  display: flex; /* susun isi navbar sebaris */
+  justify-content: space-between; /* logo di kiri, menu di kanan */
+  align-items: center; /* rata tengah secara vertikal */
+  padding: 14px 40px; /* jarak antara isi dengan tepi. padding: atasbawah kanankiri */
+  z-index: 999; /* navbar ga ketutup */
+}
+nav .logo { /* settingan logo "menov's profile" */
+  color: var(--putih);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+nav ul { /* settingan daftar menu */
+  list-style: none; /* karena ini link dan biasanya ada garis bawah maka gunakan fungsi ini untuk hapus*/
+  display: flex;
+  gap: 24px;  /* jarak/spasi antar menu */
+}
+nav a {
+  color: var(--putih);
+  text-decoration: none; /* hapus garis bawah bawaan link */
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+nav ul li a:hover {
+  color: #143a50; /* warna berubah saat diklik */
+}
+/* aturan semua bagian */
+section {
+  min-height: 100vh;        /* tinggi 1 layar penuh */
+  padding: 100px 60px; /* jarak isi dari tepi */
+
+
+}/* bagian home */
+#home {
+  background-color: var(--pink);
+  color: var(--hijau);
+  display: flex;
+  flex-direction: column;   /* susunannya kebawah, bukan kesamping */
+  justify-content: center;  /* isi ditengah layar */
+}
+#home .salam { /* bagian awalan */
+  font-size: 1.2rem;
+  margin-bottom: 10px; /* spasi antar teks/bagian kebawah */
+}
+#home h1 { /* bagian judul */
+  font-size: 3rem;
+  font-weight: 700; /* mengatur ketebalan teks */
+  margin-bottom: 12px;
+}
+#home .sub { /* bagian deskripsi */
+  font-size: 1.1rem;
+  max-width: 500px;
+  line-height: 1.7; /* ini jarak antar baris */
+  margin-bottom: 30px;
+}
+#home .tombol {
+  display: inline-block; /* buat jarak elemen dgn tepi yg bisa jadi kotak */
+  background-color: var(--putih);
+  color: var(--hijau);
+  padding: 12px 28px; 
+  border-radius: 6px; /* sudut kotak */
+  text-decoration: none; 
+  font-weight: 700;
+}
+#home .tombol:hover {
+  background-color: #99ffec;
+
+
+}/* judul untuk semua bagian yang bisa dipakai berulang */
+.section-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  color: var(--hijau);
+  margin-bottom: 10px;
+}/*garis hiasan dibawah judul */
+.divider {
+  width: 50px;
+  height: 4px;
+  background-color: var(--pink);
+  margin-bottom: 30px;
+  border-radius: 2px;
+} /* settingan bagian about */
+#about {
+  background-color: var(--biru);
+} /* bagian foto dan nama */
+.about-profil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* rata tengah */
+  text-align: center;
+  margin-bottom: 30px;
+} /* foto berbentuk */
+.about-profil img {
+  width: 150px;
+  height: 150px;
+  border-radius: 30%; /* sudut bentuk */
+  object-fit: cover; /* foto tidak gepeng */
+  border: 4px solid var(--pink);
+  margin-bottom: 14px;
+} /* nama */
+.about-profil h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+} /* deskripsi diri */
+.about-desc {
+  max-width: 720px;
+  margin: 0 auto;  /* rata tengah */
+  font-size: 1.2rem;
+  line-height: 1.8;
+  text-align: justify;
+  color: var(--hijau);
+} /* skill */
+.skill-list {
+  display: flex;
+  flex-wrap: wrap; /* kebawah kalau ga muat */
+  gap: 10px;
+  margin-top: 20px;
+  justify-content: center;
+} /* bentuk skill */
+.skill-list span {
+  background-color: var(--pink);
+  color: var(--hijau);
+  padding: 6px 16px;
+  border-radius: 10px;   
+  font-size: 0.9rem;
+  font-weight: 700;
+} /* bagian pendidikan */
+.pendidikan {
+  max-width: 720px;
+  margin: 30px auto 0;
+}
+.pendidikan h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  color: var(--hijau);
+  margin-bottom: 16px;
+}/* logo dan teks bersebelahan */
+.edu-item {
+  display: flex;
+  align-items: center;   /* logo dan teks rata tengah */
+  gap: 16px;
+  margin-bottom: 16px;
+} /* foto atau  logo pendidikan */
+.edu-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;   /* logo tidak terpotong */
+}
+.edu-item p {
+  font-size: 1rem;
+  color: var(--hijau);
+  line-height: 1.5;
+
+} /* bagian experience */
+#experience {
+  background-color: var(--pink);
+} /* sub judul dalam bagian (proyek, organisasi, kepanitiaan) */
+.sub-judul {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  color: var(--biru);
+  margin: 24px 0 14px;
+  font-weight: 700;
+} /* variabel proyek dipakai berulang untuk setiap bagian dari sub judul */
+.proyek {
+  background-color: var(--putih);
+  border-left: 5px solid var(--hijau); /* garis tebal dibagian kiri kotak */
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin-bottom: 16px;
+  max-width: 760px;
+}
+.proyek h3 { /* nama kegiatan */
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  color: var(--hijau);
+  margin-bottom: 6px;
+}
+.proyek p { /* keterangan kegiatan */
+  font-size: 0.95rem;
+  color: var(--hijau);
+  line-height: 1.7;
+}
+
+
+#contact {
+  background-color: var(--biru);
+}
+.kontak-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+.kontak-list a, .kontak-list span {
+  font-size: 0.95rem;
+  color: var(--hijau);
+  text-decoration: none;
+}
+.kontak-list a:hover {
+  color: var(--pink);
+} 
+.kontak-list strong {
+  color: var(--hijau);
+  margin-right: 6px;
+} /* form komentar */
+.komentar-box { /* ukuran kotak komentar */
+  max-width: 600px;
+}/* isi dari komen */
+.komentar-box h3 { 
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}/* desain bagian input */
+.komentar-box input,
+.komentar-box textarea {
+  width: 100%;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  border: 1.5px solid #f4cfcf;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: 'Lato', sans-serif;
+  outline: none;
+} /* hapus outline biru bawaan browser kaarena mengandung link*/
+.komentar-box input:focus {
+   border-color: var(--hijau);
+}/* bagian untuk isi komentar */
+.komentar-box button {
+  padding: 10px 24px;
+  background-color: var(--putih);
+  color: var(--hijau);
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: background-color 0.2s;
+}
+.komentar-box button:hover { /* ketika bagian kirim diklik */
+  background-color: var(--pink);
+} /* menampilkan komentar yang terkirim */
+.komentar-item {
+  background-color: var(--putih);
+  border-left: 4px solid var(--hijau);
+  padding: 10px 14px;
+  margin-top: 10px;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: var(--hijau);
+}
+
+#thankyou { /* bagian terima kasih */
+  background-color: var(--pink);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;   
+  text-align: center;
+  color: var(--hijau); 
+}
+#thankyou h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 12px;
+}
+#thankyou p {
+  font-size: 1.7rem;
+  opacity: 0.85;
+  max-width: 450px;
+  line-height: 1.7;
+}
+</style>
+</head>
+
+<body>
+    <nav> <!-- menu atau navigasi -->
+        <div class="logo">Menov's Profile</div> <!-- variabel logo dengan isi "menov's profile" -->
+         <ul> <!-- wadah  untuk menu "daftar menu" -->
+             <li><a href="#home">Home</a></li> <!-- menu "home", ketika diklik bisa ke halaman yg dituju menggunakan link(a(href)) -->
+             <li><a href="#about">About</a></li>
+             <li><a href="#experience">Experience</a></li>
+             <li><a href="#contact">Contact</a></li>
+    </ul>
+    </nav>
+
+  <section id="home"> <!-- bagian home -->
+  <p class="salam">Hello, welcome to</p> <!-- variabel sallam untuk nyimpen data -->
+  <h1>Menov's Profile ✨</h1>
+  <p class="sub"> <!-- variabel sub untuk deskripsi -->
+    Mahasiswi Teknik Elektro Universitas Padjadjaran yang terus belajar,
+    berkembang, dan siap mengeksplor dunia teknologi.
+  </p>
+  <a href="#about" class="tombol">Kenalan yuk →</a> <!-- a href= link nanti diklik bisa ke halaman yg dituju, variabel tombol untuk teks next halaman berikutnya -->
+</section> <!-- bagian home ditutup -->
+
+  <section id="about"> <!-- bagian about -->
+  <h2 class="section-title">About Me</h2> <!-- judul bagian about -->
+  <div class="divider"></div> <!-- garis hiasan -->
+  <div class="about-profil"> <!-- div=wadah -->
+    <img src="foto.jpeg" alt="Foto Menova" /> <!-- nambahin foto -->
+    <h2>Menova Priscillia Salamba</h2> <!-- foto diikuti nama dibawahnya -->
+  </div>
+  <div class="about-desc"> <!-- deskripsi diri -->
+    <p>
+      Haloo! Aku Menova, mahasiswi aktif Program Studi Teknik Elektro Universitas Padjadjaran 
+      angkatan 2025 yang mulai memiliki ketertarikan pada dunia teknologi, mengeksplor diri,
+      dan memanfaatkan setiap kesempatan untuk berkembang. Aktif diberbagai organisasi dan kepanitiaan.
+    </p>
+    <div class="skill-list"> <!-- bagian list skill -->
+      <span>Teamwork</span> <!-- span= teks kecil -->
+      <span>Problem Solving</span>
+      <span>Adaptif</span>
+      <span>Inisiatif</span>
+    </div>
+  </div>
+  <div class="pendidikan"> <!-- bagian pendidikan -->
+    <h3>Pendidikan</h3>
+    <div class="edu-item"> <!-- wadah untuk data pendidikan -->
+      <img src="unpad.png" alt="Logo Unpad" /> <!-- img src= nampilkan gmabar, alt=sekiranya gambar ga muncul maka ouputnya teks -->
+      <p><strong>Universitas Padjadjaran</strong><br/>Teknik Elektro <br/> 2025 – Sekarang</p> <!-- strong= bold teks -->
+    </div>
+    <div class="edu-item">
+      <img src="dubes.jpg" alt="Logo SMAN 12 Bekasi" />
+      <p><strong>SMA Negeri 12 Bekasi</strong><br/>2022 – 2025</p>
+    </div>
+    <div class="edu-item"> 
+      <img src="dosir.jpg" alt="Logo SMPN 172 Jakarta" /> 
+      <p><strong>SMP Negeri 172 Jakarta</strong><br/>2019 – 2022</p> 
+    </div> 
+    <div class="edu-item"> 
+      <img src="kotbar.png" alt="Logo SDN Kota Baru 2" />
+      <p><strong>SD Negeri Kota Baru 2</strong><br/>2013 – 2019</p> 
+    </div>
+  </div>
+  </section> <!-- bagian about ditutup -->
+
+  <section id="experience"> <!-- bagian pengalaman -->
+  <h2 class="section-title">Experience</h2> <!-- judul utama halaman -->
+  <div class="divider"></div> <!-- garis hiasan dibawah teks -->
+  <p class="sub-judul">🔧 Proyek</p> <!-- sub judul -->
+  <div class="proyek"> <!-- variabel proyek untuk nyimpen data proyek -->
+    <h3>Line Follower Robot</h3> <!-- judul proyek pertama -->
+    <p>
+      Proyek ini merupakan tugas besar mata kuliah Pemrograman 2, yaitu merancang robot
+      yang mampu bergerak mengikuti jalur garis yang telah disediakan. Proyek ini merupakan
+      kolaborasi antara hardware dan software menggunakan Arduino dan Sensor Inframerah sebagai komponen utama.
+    </p> <!-- paragraf deskripsi proyek 1 ditutup -->
+  </div> <!-- menutup bagian proyek 1 -->
+  <div class="proyek"> <!-- proyek 2 -->
+    <h3>Multimeter Digital Berbasis Mikrokontroler</h3>
+    <p>
+      Merancang prototype multimeter menggunakan Arduino Uno sebagai komponen utama.
+      Alat ini mampu mengukur tegangan dan arus yang ditampilkan pada layar LCD I2C, 
+      dilengkapi fitur waktu real-time menggunakan modul RTC.
+    </p>
+  </div>
+  <p class="sub-judul">🏛️ Organisasi</p> <!-- variabel sub judul untuk menyimpan data organisasi -->
+  <div class="proyek"> <!-- isi dari variabel sub judul yang dibagi menjadi beberapa bagian -->
+    <h3>Ketua — PMK Misiologi Unpad</h3>
+    <p>2026</p>
+  </div>
+  <div class="proyek">
+    <h3>Staff — Departemen Keprofesian BE HMTE Unpad</h3>
+    <p>2026 - Sekarang</p>
+  </div>
+  <div class="proyek">
+    <h3>Koordinator Bidang — PPGT Galaxi</h3>
+    <p>2024 – 2026</p>
+  </div>
+  <div class="proyek">
+    <h3>Bendahara — Majelis Permusyawaratan Kelas</h3>
+    <p>2023 – 2024</p>
+  </div>
+  <p class="sub-judul">📋 Kepanitiaan</p> <!-- data kepanitiaan -->
+  <div class="proyek">
+    <h3>Wakil Kepala Divisi Humas — Lomba Robot Mechatura</h3>
+    <p>2026</p>
+  </div>
+  <div class="proyek">
+    <h3>Kepala Divisi Dankom — Natal PMK Misiologi</h3>
+    <p>2025</p>
+  </div>
+  <div class="proyek">
+    <h3>Divisi Humas Lomba — Volunteer Mechatura</h3>
+    <p>2025</p>
+  </div>
+  <div class="proyek">
+    <h3>Divisi Acara — Expo Campus / Education Fair</h3>
+    <p>2026</p>
+  </div>
+</section> <!-- menutup bagian experience -->
+
+<section id="contact"> <!-- bagian kontak -->
+  <h2 class="section-title">Contact</h2> <!-- judul utama halaman -->
+  <div class="divider"></div>
+  <div class="kontak-list"> <!-- daftar kontak -->
+    <div><strong>📱 Phone:</strong> <span>085156688206</span></div> <!-- phone sebagai ibarat juduk bagian dan span teksnya atau keterangan -->
+    <div>
+      <strong>📧 Email:</strong> <!-- bagian email dengan teks bold(strong) -->
+      <a href="mailto:salamba0611@gmail.com">salamba0611@gmail.com</a> <!-- teks yang ditampilkan itu salamba0611@gmai.com tapi teks itu mengandung link yang ketika diklik akan terhubung email -->
+      &nbsp;/&nbsp; <!-- memberikan spasi yg dipisahkan garis miring -->
+      <a href="mailto:menova25001@mail.unpad.ac.id">menova25001@mail.unpad.ac.id</a>
+    </div>
+    <div>
+      <strong>💼 LinkedIn:</strong> <!-- bagian linkedin -->
+      <a href="https://www.linkedin.com/in/menova-salamba-033b3a407" target="_blank">
+        Menova Priscillia Salamba <!-- namun teks yg ditampilkan nama bukan nama dr linkedin, teks yg ditampilkan bisa diatur -->
+      </a>
+    </div>
+    <div>
+      <strong>📸 Instagram:</strong>
+      <a href="https://instagram.com/menova.ps" target="_blank">@menova.ps</a>
+    </div>
+  </div> 
+  <div class="komentar-box"> <!-- bagian tambahan yaitu komentar -->
+    <h3>💬 Tinggalkan Pesan</h3> <!-- judulnya -->
+    <input type="text" id="input-nama" placeholder="Nama kamu" /> <!-- meminta input dari pengguna, type="text" ini adalah inputan teks biasa, id="input-nama" ini id atau nama pengguna -->
+    <textarea id="input-pesan" placeholder="Tulis pesanmu di sini..."></textarea>
+    <button onclick="kirimKomentar()">Kirim</button> <!-- buat tombol kirim, onclick="kirimKomentar()" memanggil fungsi javaascript -->
+    <div id="daftar-komentar"></div> <!-- menampilkan komentar -->
+  </div>
+</section>
+
+<section id="thankyou"> <!-- bagian penutup -->
+  <h2> THANK YOU!✨</h2>
+  <p>
+    Sampai jumpa!🌿
+  </p>
+</section>
+
+<script>
+  function kirimKomentar() { /* mengambil output dr input komentar pengguna */
+    var nama = document.getElementById("input-nama").value;
+    var pesan = document.getElementById("input-pesan").value
+    if (nama.trim() === "" || pesan.trim() === "") { /* mengahruskan pengguna mengisi dua kotak, jika tidak dihentikan dan kasih peringatan */
+      alert("Nama dan pesan tidak boleh kosong ya!");
+      return; /* kembalikan nilai */
+    }
+    var komentarBaru = document.createElement("div"); /* membuat div untuk menyipan data komentar */
+    komentarBaru.className = "komentar-item";
+    komentarBaru.innerHTML = "<strong>" + nama + ":</strong> " + pesan; /* div berisi nama dan pesan/komen */
+    document.getElementById("daftar-komentar").appendChild(komentarBaru); /* menampilkan hasilnya di halaman */
+    document.getElementById("input-nama").value = ""; /* ketika sudah diisi dikosongkan agar dapat diisi kembali */
+    document.getElementById("input-pesan").value = "";
+  }
+</script>
+</body>
+</html>
